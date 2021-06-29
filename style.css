@@ -1,5 +1,5 @@
 :root{
-    --circleDimension: 9em;
+    --circleDimension: 7.5vw;
     --circleWidth: calc(var(--circleDimension) *2);
     --circleheight: calc(var(--circleDimension));
     --circleRadius: 200px;
@@ -8,12 +8,7 @@
 .button{
     font-size: 40px;
     padding: 20px 20px 20px 40px;
-
 }
-
-
-
-
 
 .sidenav{
     height: 100%;
@@ -34,14 +29,14 @@
     color: #818181;
     display: block;
 }
-#persIcon{
+
+#centerDiv{
     width:calc(var(--circleDimension));
     height:calc(var(--circleDimension));;
     position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;
-    /*background-color: #111111;*/
 }
 
 .middle{
@@ -49,14 +44,11 @@
     width: 10px;
     height: 10px;
     bottom: 0;
-    /*background-color: brown;*/
 }
-#man{
+
+#personIcon{
     position: fixed;
-    /*left: 42%;*/
     bottom: 0;
-    /*margin: 0 auto;*/
-    /*transform: translate(-50%);*/
     width: calc(var(--circleDimension));
     height: calc(var(--circleDimension));
 }
@@ -81,23 +73,24 @@
 p{
     margin: auto;
     font-size: 1em;
-    /*line-height: 100px;*/
 }
 
 #circles{
     height: 100%;
     width: 84%;
     position: fixed;
-    /*z-index: 1;*/
     top: 0;
     left: 0;
-    /*background-color: green;*/
     display: flex;
     justify-content: center;
-    /*background: url("gradient.svg");*/
-    /*background-size: cover;*/
 }
 
+#gradient{
+    position: fixed;
+    bottom: 0;
+    width: calc(var(--circleWidth)*6.6);
+    height: calc(var(--circleheight)*6.6);
+}
 
 .halfCircle{
     position: fixed;
@@ -133,3 +126,5 @@ p{
     width: calc(var(--circleWidth)*5);
     height: calc(var(--circleheight)*5);
 }
+
+

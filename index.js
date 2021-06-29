@@ -81,15 +81,15 @@ function output() {
     var dudecordar = [dudecord.left, dudecord.top] //wandelt Coordination in Array
     var items = document.getElementsByClassName('item') //alle Item Objekte
     let csvContent = 'data:text/csv;charset=utf-8,';
-    csvContent += "item,distance,winkel\r\n"
+    csvContent += "item,distance,kreis,winkel\r\n"
     for (let i = 0; i<items.length; i++) {
         let itemscord = getCoords(items[i])
         let itemscordar = [itemscord.left, itemscord.top]
         let entfernung = parseInt(distance(dudecordar, itemscordar).toFixed(2),10)
-        entfernung = distToCirc(entfernung)
+        let kreis = distToCirc(entfernung)
         let winkel = dreiEck(itemscordar, dudecordar)
         let name = items[i].innerText;
-        let row = name + "," + entfernung + "," + winkel
+        let row = name + "," + entfernung + ","+kreis +"," + winkel
         csvContent += row +"\r\n";
 
     }
