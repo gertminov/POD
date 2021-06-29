@@ -1,0 +1,135 @@
+:root{
+    --circleDimension: 9em;
+    --circleWidth: calc(var(--circleDimension) *2);
+    --circleheight: calc(var(--circleDimension));
+    --circleRadius: 200px;
+}
+
+.button{
+    font-size: 40px;
+    padding: 20px 20px 20px 40px;
+
+}
+
+
+
+
+
+.sidenav{
+    height: 100%;
+    width: 16%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+}
+
+.sidenav p{
+    padding: 20px 20px 20px 40px;
+    font-size: 40px;
+    color: #818181;
+    display: block;
+}
+#persIcon{
+    width:calc(var(--circleDimension));
+    height:calc(var(--circleDimension));;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    /*background-color: #111111;*/
+}
+
+.middle{
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    bottom: 0;
+    /*background-color: brown;*/
+}
+#man{
+    position: fixed;
+    /*left: 42%;*/
+    bottom: 0;
+    /*margin: 0 auto;*/
+    /*transform: translate(-50%);*/
+    width: calc(var(--circleDimension));
+    height: calc(var(--circleDimension));
+}
+
+
+.item{
+    width: 2em;
+    height: 2em;
+    margin: 1rem 0 0 1rem;
+    background-color: #29e;
+    color: white;
+    border-radius: 50%;
+    padding: 2%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    margin: auto;
+    font-size: 1em;
+    /*line-height: 100px;*/
+}
+
+#circles{
+    height: 100%;
+    width: 84%;
+    position: fixed;
+    /*z-index: 1;*/
+    top: 0;
+    left: 0;
+    /*background-color: green;*/
+    display: flex;
+    justify-content: center;
+    /*background: url("gradient.svg");*/
+    /*background-size: cover;*/
+}
+
+
+.halfCircle{
+    position: fixed;
+    /*left: 42%;*/
+    bottom: 0;
+    border-radius: calc(var(--circleRadius)*2 + 10px) calc(var(--circleRadius)*2 + 10px) 0 0;
+    border: 10px solid gray;
+    border-bottom: 0;
+    width: calc(var(--circleWidth));
+    height: calc(var(--circleheight));
+}
+
+#circle2{
+    border-radius: calc(var(--circleRadius)*2 + 10px) calc(var(--circleRadius)*2 + 10px) 0 0;
+    width: calc(var(--circleWidth)*2);
+    height: calc(var(--circleheight)*2);
+}
+
+#circle3{
+    border-radius: calc(var(--circleRadius)*3 + 10px) calc(var(--circleRadius)*3 + 10px) 0 0;
+    width: calc(var(--circleWidth)*3);
+    height: calc(var(--circleheight)*3);
+}
+
+#circle4{
+    border-radius: calc(var(--circleRadius)*4 + 10px) calc(var(--circleRadius)*4 + 10px) 0 0;
+    width: calc(var(--circleWidth)*4);
+    height: calc(var(--circleheight)*4);
+}
+
+#circle5{
+    border-radius: calc(var(--circleRadius)*5 + 10px) calc(var(--circleRadius)*5 + 10px) 0 0;
+    width: calc(var(--circleWidth)*5);
+    height: calc(var(--circleheight)*5);
+}
