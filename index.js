@@ -22,7 +22,7 @@ interact(".draggable").draggable({
             dudecords = [CenterMan.top, CenterMan.left]
             var ballCoords = [itemCenter.top, itemCenter.left]
             var derweg = distance(dudecords, ballCoords).toFixed(2)
-            var winkel = dreiEck(ballCoords, dudecords)
+            let winkel = dreiEck(ballCoords, dudecords)
 
             docext && (docext.textContent = "position: " + itemCenter.left.toFixed(2) + " : " + itemCenter.top.toFixed(2));
             winkelPara && (winkelPara.textContent = "winkel: " + winkel)
@@ -66,6 +66,9 @@ function dreiEck(itemP, centerP){
     var distCntrGhst = distance(centerP, ghostP)
     var winkelcos = Math.acos((pow(distItmGhst)-pow(distCntrGhst)-pow(distItmCntr))/(-2*distCntrGhst*distItmCntr));
     var winkel  = winkelcos * (180/Math.PI); //Gradmaß und Winkelmaß
+    if (itemP[1] < centerP[1]){
+        winkel = -winkel
+    }
     return winkel.toFixed(2)
 }
 
