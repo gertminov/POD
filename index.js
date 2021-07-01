@@ -18,7 +18,7 @@ interact(".draggable").draggable({
             var distancePara = document.getElementById('distance')
             var CenterMan = document.getElementById('middle').getBoundingClientRect()
             var winkelPara = document.getElementById('winkel')
-            var dudecords = [(CenterMan.top + CenterMan.height),(CenterMan.left + CenterMan.width/2  + 1000) ]
+            var dudecords = [(CenterMan.top + CenterMan.height),(CenterMan.left + CenterMan.width/2) ]
             dudecords = [CenterMan.top, CenterMan.left]
             var ballCoords = [itemCenter.top, itemCenter.left]
             var derweg = distance(dudecords, ballCoords).toFixed(2)
@@ -58,18 +58,19 @@ function distance(pointA, pointB){
 
 }
 
-//Gibt theoretisch den Winkel zurück, weiß aber nicht wirklich ob das funktioniert
+//Gibt  den Winkel zurück
 function dreiEck(itemP, centerP){
     var ghostP = [itemP[0], centerP[1]]; // 3ter Punkt mit x-Koordinate von itemP und y-Koordinate
     var distItmCntr = distance(itemP, centerP);
     var distItmGhst = distance(itemP, ghostP);
     var distCntrGhst = distance(centerP, ghostP)
     var winkelcos = Math.acos((pow(distItmGhst)-pow(distCntrGhst)-pow(distItmCntr))/(-2*distCntrGhst*distItmCntr));
-    var winkel  = winkelcos * (180/Math.PI); //Gradmaß und Winkelmaß
+    var winkel  = winkelcos * (180/Math.PI); //Gradmaß zu Winkelmaß
     if (itemP[1] < centerP[1]){
         winkel = -winkel
     }
-    return winkel.toFixed(2)
+    winkel += 90
+    return winkel.toFixed(0)
 }
 
 //gibt input^2 zurück
@@ -81,18 +82,19 @@ document.querySelector('#dataRec').addEventListener('click', output)
 //gibt .csv Datei mit allen daten zurück
 function output() {
     var dudecord = getCoords(document.getElementById('middle'))
-    var dudecordar = [dudecord.left, dudecord.top] //wandelt Coordination in Array
+    var dudecordar = [dudecord.top, dudecord.left] //wandelt Coordination in Array
     var items = document.getElementsByClassName('item') //alle Item Objekte
     let csvContent = 'data:text/csv;charset=utf-8,';
-    csvContent += "item,distance,kreis,winkel\r\n"
+    csvContent += "item,name,distance,kreis,winkel\r\n"
     for (let i = 0; i<items.length; i++) {
         let itemscord = getCoords(items[i])
-        let itemscordar = [itemscord.left, itemscord.top]
+        let itemscordar = [itemscord.top, itemscord.left]
         let entfernung = parseInt(distance(dudecordar, itemscordar).toFixed(2),10)
         let kreis = distToCirc(entfernung)
         let winkel = dreiEck(itemscordar, dudecordar)
         let name = items[i].innerText;
-        let row = name + "," + entfernung + ","+kreis +"," + winkel
+        let item = items[i].getAttribute('id')
+        let row = item+ ',' + name + "," + entfernung + ","+kreis +"," + winkel
         csvContent += row +"\r\n";
 
     }
@@ -121,3 +123,40 @@ function distToCirc(entfernung) {
     }
     return entfernung
 }
+
+class Item{
+    item
+    name
+    constructor(item, name) {
+        this.item = item;
+        this.name = name
+    }
+}
+
+var item1 = new Item('Laptop', 'Laptop')
+var item2 = new Item('Handy', 'Handy')
+var item3 = new Item('Mutter', 'Ilse')
+var item4 = new Item('Vater', 'Gert')
+var item5 = new Item('Freund', 'Herbert')
+var item6 = new Item('TV', 'TV')
+
+
+var idex = 0
+export const itemArray = [item1, item2, item3, item4, item5, item6]
+export var testArray = [false, false, false, false]
+
+
+document.querySelector('#newItem').addEventListener('click', function (){
+    let newDiv = document.createElement("div")
+    newDiv.setAttribute('class', 'draggable item')
+    newDiv.setAttribute('id', itemArray[idex].item)
+    let newP = document.createElement('p')
+    newP.innerHTML = itemArray[idex].name
+
+    idex++
+    newDiv.appendChild(newP)
+    let itemContainer = document.getElementById('items')
+    itemContainer.appendChild(newDiv)
+})
+
+

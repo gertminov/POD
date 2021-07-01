@@ -5,6 +5,13 @@
     --circleRadius: 200px;
 }
 
+
+.devicesSelction{
+    position: center;
+    display: flex;
+    justify-content: center;
+}
+
 .button{
     font-size: 40px;
     padding: 20px 20px 20px 40px;
@@ -28,6 +35,8 @@
     font-size: 40px;
     color: #818181;
     display: block;
+    font-family: sans-serif;
+
 }
 
 #centerDiv{
@@ -41,8 +50,8 @@
 
 .middle{
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 1px;
+    height: 1px;
     bottom: 0;
 }
 
@@ -58,7 +67,9 @@
     width: 2em;
     height: 2em;
     margin: 1rem 0 0 1rem;
-    background-color: #29e;
+    background-color: grey;
+    font-family: sans-serif;
+    font-weight: bold;
     color: white;
     border-radius: 50%;
     padding: 2%;

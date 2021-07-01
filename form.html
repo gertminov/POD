@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="devicesSelction" id="devSelection">
+    <form>
+        <input type="checkbox" class="devSelector" id="Computer" value="gewlt"> <label for="Computer">Computer</label> <br>
+        <input type="checkbox" class="devSelector" id="TV"> <label for="TV">TV</label> <br>
+        <input type="checkbox" class="devSelector" id="SmartSpeaker"> <label for="SmartSpeaker">Smart Speaker</label> <br>
+        <input type="checkbox" class="devSelector" id="Konsole"> <label for="Konsole">Konsole</label> <br>
+        <input type="checkbox" class="devSelector" id="Smartwatch"> <label for="Smartwatch">Smartwatch</label> <br>
+        <input type="checkbox" class="devSelector" id="Tablet"> <label for="Tablet">Tablet</label> <br>
+        <input type="checkbox" class="devSelector" id="Radio"> <label for="Radio">Radio</label> <br>
+        <input type="checkbox" class="devSelector" id="Laptop"> <label for="Laptop">Laptop</label> <br>
+        <input type="checkbox" class="devSelector" id="Handy"> <label for="Handy">Handy</label> <br>
+        <button type="button" id="devSubmit">Submit</button>
+
+    </form>
+
+
+  </div>
+  <a href="index.html"> hier</a>
+  <p id="output">test</p>
+
+  <script src="devSelector.js" type="module"></script>
+  <script src="index.js" type="module"></script>
+    <script>
+        // import {testArray} from "./index";
+        function halloSagen(){
+            document.getElementById('output').innerHTML = document.getElementById('Computer').checked
+        }
+    </script>
+
+</body>
+</html>
