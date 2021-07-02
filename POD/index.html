@@ -7,18 +7,20 @@
 </head>
 <body>
     <div class="sidenav">
-        <p id="weg">Position</p>
-        <p id="distance">Distanz</p>
-        <p id="winkel">winkel</p>
-        <button id="dataRec" class="button" >Gib Daten</button>
-        <button id="newItem" class="button">Gib Item</button>
+<!--        <p id="weg">Position</p>-->
+<!--        <p id="distance">Distanz</p>-->
+<!--        <p id="winkel">winkel</p>-->
+        <div class="buttonContainer">
+            <button id="dataRec" class="button" >Absenden</button>
+            <button id="info" class="button" onclick="window.open('../info/info.html', '_blank')">INFO</button>
+        </div>
 
     </div>
     <div id="circles">
-        <img src="gradient.svg" id="gradient" >
+        <img src="../assets/gradient.svg" id="gradient" >
         <div id="centerDiv">
             <div class="middle" id="middle"></div>
-            <img id="personIcon" src="person.svg" alt="Person">
+            <img id="personIcon" src="../assets/person.svg" alt="Person">
         </div>
         <div id="circle1" class="halfCircle"></div>
         <div id="circle2" class="halfCircle"></div>
@@ -30,7 +32,7 @@
     </div>
     <div id="items">
 <!--        <div id="item1" class="draggable item">-->
-<!--            <p>Handy</p>-->
+<!--            <p class="itemText">Handy</p>-->
 <!--        </div>-->
 <!--        <div id="item2" class="draggable item">-->
 <!--            <p>Laptop</p>-->
@@ -45,5 +47,7 @@
 
     <script src="index.js" type="module">
     </script>
+    <script src="https://s.pageclip.co/v1/pageclip.js"></script>
+
 </body>
 </html>

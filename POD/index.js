@@ -1,6 +1,10 @@
 
 import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js'
+// import * as pageclip from 'https://s.pageclip.co/v1/pageclip.js'
 
+const alldata = {
+    id: ""
+}
 
 interact(".draggable").draggable({
     inertia: false,
@@ -86,6 +90,7 @@ function output() {
     var items = document.getElementsByClassName('item') //alle Item Objekte
     let csvContent = 'data:text/csv;charset=utf-8,';
     csvContent += "item,name,distance,kreis,winkel\r\n"
+
     for (let i = 0; i<items.length; i++) {
         let itemscord = getCoords(items[i])
         let itemscordar = [itemscord.top, itemscord.left]
@@ -94,17 +99,27 @@ function output() {
         let winkel = dreiEck(itemscordar, dudecordar)
         let name = items[i].innerText;
         let item = items[i].getAttribute('id')
+        let itemdata = {
+            name: name,
+            distance: entfernung,
+            circle: kreis,
+            degree: winkel
+        }
+        alldata[item] = itemdata
         let row = item+ ',' + name + "," + entfernung + ","+kreis +"," + winkel
         csvContent += row +"\r\n";
 
     }
-    var encodedURI = encodeURI(csvContent)
-    //damit den "Gib daten" Knopf funktionert. ist aus dem Internet, keien Ahnung
-    var link = document.createElement("a")
-    link.setAttribute("href", encodedURI);
-    link.setAttribute('download', "data.csv");
-    document.body.appendChild(link)
-    link.click()
+
+    sender(alldata)
+
+    // var encodedURI = encodeURI(csvContent)
+    // //damit den "Gib daten" Knopf funktionert. ist aus dem Internet, keien Ahnung
+    // var link = document.createElement("a")
+    // link.setAttribute("href", encodedURI);
+    // link.setAttribute('download', "data.csv");
+    // document.body.appendChild(link)
+    // link.click()
 }
 
 //teilt die Entfernung in die Kreise ein
@@ -136,10 +151,26 @@ class Item{
 
 
 var idex = 0
-const itemArray = []
+var itemArray = []
 
-const devicelist = ['Computer', 'TV', "SmartSpeaker", "Konsole", "Smartwatch", "Tablet", "Radio", "Laptop" , "Handy"]
-const peopleList = ['Mutter', 'Vater', 'Freund*in', 'Mitschüler', 'Partner*in', 'Nachbar*in', 'Geschwister']
+const devicelist = ['Computer', 'TV', "SmartSpeaker", "Konsole", "Smartwatch", "Tablet", "Radio", "Laptop" , "Smartphone" , 'Navi', 'Telefon']
+const peopleList = [
+    'Pastor*in',
+    'Lehrende',
+    "Arbeitskolleg*in",
+    "Großeltern",
+    "Verwandte",
+    "Mitbewohner*in",
+    "Haustier",
+    "Kommiliton*in",
+    'Mutter',
+    'Vater',
+    'Freund*in',
+    'Mitschüler*in',
+    'Partner*in',
+    'Nachbar*in',
+    'Geschwister'
+]
 
 
 function getDevices(){
@@ -174,6 +205,7 @@ function itemAdder (){
         newDiv.setAttribute('class', 'draggable item')
         newDiv.setAttribute('id', itemArray[idex].item)
         let newP = document.createElement('p')
+        newP.setAttribute('class', 'itemText')
         newP.innerHTML = itemArray[idex].name
 
         idex++
@@ -186,14 +218,32 @@ function itemAdder (){
     }
 
 }
+function getID() {
+    alldata.id = localStorage.getItem('kennung')
+}
 
 getDevices()
 getPeople()
+getID()
 const idexBound = itemArray.length
 for (let i = 0; i < itemArray.length; i++) {
     itemAdder()
 }
 localStorage.clear()
+
+
+function sender(data){
+    // var data = {
+    //     name: "Gert",
+    //     id: 'Dietrich'
+    // }
+    Pageclip.send('Fz7R3ajDyYVoaVmPQKeq5RpYbqaIQa97', 'POD_form', data,  function (error, response) {
+        console.log('saved?', !!error, '; response:', error || response)})
+    // pageclip.send('Fz7R3ajDyYVoaVmPQKeq5RpYbqaIQa97', 'POD Form', data,  function (error, response) {
+    //     console.log('saved?', !!error, '; response:', error || response)})
+    console.log("hallo")
+
+}
 
 
 

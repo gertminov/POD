@@ -1,0 +1,156 @@
+body{
+    background: #dfdfdf
+}
+
+.info{
+    padding: 0 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.25em;
+    color: #424242;
+}
+
+.form{
+    display: flex;
+    position: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.kennungContainer{
+    width: 15%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #D9D7D3;
+
+    /*display: flex;*/
+    /*flex-direction: column;*/
+
+}
+
+.devicesSelction{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #DDD3CF;
+    width: 20%;
+    /*padding: 2%;*/
+
+    position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em;
+
+}
+
+.peopleSelection{
+    background-color: #B8B2AD;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    /*position: center;*/
+    position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em;
+}
+
+.submitContainer{
+    background-color: #F0EEED;
+    padding: 20px;
+    border-radius: 10px;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+#peopleFormItems{
+    height: 25vw;
+
+    display: flex;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+/*    !*align-content: flex-start;*!*/
+/*    justify-content: center;*/
+}
+
+
+
+.probKennung{
+    position: center;
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+#kennungPara{
+    color: #eb4034;
+}
+
+.probForm{
+    height: 35px;
+    padding: 0 16px;
+    border: 2px solid #999999;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-top: 10px;
+}
+
+.devFormContainer{
+    padding: 10px 5px 10px 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+
+    background-color: #ffffff;
+}
+
+
+.labelDev{
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: #424242;
+}
+
+.devSelector{
+    margin: 0.5em;
+}
+
+
+.peopSelector{
+    height: 35px;
+    padding: 0 16px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: #424242;
+    outline: 0;
+    transition: .2s;
+    margin-top: 10px;
+}
+
+.peopSelector::placeholder{
+    font-weight: normal;
+}
+
+
+
+.SubmitButton{
+    height: 35px;
+    padding: 0 16px;
+    border: 2px solid cornflowerblue ;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: cornflowerblue;
+    outline: 0;
+    transition: .2s;
+    margin-top: 10px;
+}

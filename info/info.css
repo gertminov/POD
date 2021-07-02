@@ -1,0 +1,17 @@
+body{
+    background: #dfdfdf;
+    display: flex;
+    justify-content: center;
+}
+
+.textContainer{
+    width: 30%;
+    padding: 0 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.25em;
+    color: #424242;
+    margin-top: 10px;
+
+}
+

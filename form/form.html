@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="form">
+        <div class="kennungContainer">
+            <p class="info" id="kennungPara"></p>
+            <p class="info">Bitte geben Sie hier das Codewort ein, <br> das Sie zu Beginn des Fragebogens erstellt haben.</p>
+            <form class="probKennung">
+                <input type="text" id="probKennung" class="probForm" placeholder="Probandenkennung">
+            </form>
+        </div>
+      <div class="devicesSelction" id="devSelection">
+          <p class="info">Sie sehen nun verschiedene Mediengeräte.
+              <br>
+              Wählen Sie aus diesen alle Geräte aus, die Sie selbst besitzen oder nutzen.
+              <br>
+          </p>
+        <form>
+            <div class="devFormContainer">
+            <input type="checkbox" class="devSelector" id="SmartSpeaker"> <label class="labelDev" for="SmartSpeaker">Smart Speaker</label> <br>
+            </div>
+            <div class="devFormContainer">
+            <input type="checkbox" class="devSelector" id="Tablet"> <label class="labelDev" for="Tablet">Tablet</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Navi"> <label class="labelDev" for="Navi">Navi</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Telefon"> <label class="labelDev" for="Telefon">Telefon</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Computer" value="gewlt"> <label class="labelDev" for="Computer">Computer</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="TV"> <label class="labelDev" for="TV">TV</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Konsole"> <label class="labelDev" for="Konsole">Konsole</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Smartwatch"> <label class="labelDev" for="Smartwatch">Smartwatch</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Radio"> <label class="labelDev" for="Radio">Radio</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Laptop"> <label class="labelDev" for="Laptop">Laptop</label> <br>
+            </div>
+            <div class="devFormContainer">
+                <input type="checkbox" class="devSelector" id="Smartphone"> <label class="labelDev" for="Smartphone">Smartphone</label> <br>
+            </div>
+
+        </form>
+      </div>
+
+      <div class="peopleSelection" id="peopSelectiono">
+          <p class="info">Sie sehen nun eine Liste von Bezugspersonen.<br>
+              Schreiben Sie den Namen dieser Person, in das Feld. <br>
+              Sollten Sie für eine Person mehr als zehn Buchstaben benötigen, kürzen Sie den Namen bitte ab. <br>
+              Wenn Ihnen keine Person für ein Feld einfällt, lassen Sie dieses einfach frei. <br>
+              <br>
+              Beispiel Mutter: Als konkrete Person können Sie z.B. "Mama" oder den Namen ihrer Mutter in das Feld schreiben.
+          </p>
+          <form id="peopleFormItems">
+              <div class="peopInputContainer">
+                <input type="text" class="peopSelector" id="Partner*in" placeholder="Partner*in">
+              </div>
+              <div class="peopInputContainer">
+                <input type="text" class="peopSelector" id="Pastor*in" placeholder="Pastor*in">
+              </div>
+              <div class="peopInputContainer">
+              <input type="text" class="peopSelector" id="Mutter" placeholder="Mutter">
+              </div>
+              <div class="peopInputContainer">
+              <input type="text" class="peopSelector" id="Lehrende" placeholder="Lehrende">
+              </div>
+              <div class="peopInputContainer">
+              <input type="text" class="peopSelector" id="Arbeitskolleg*in" placeholder="Arbeitskolleg*in">
+              </div>
+              <div class="peopInputContainer">
+              <input type="text" class="peopSelector" id="Großeltern" placeholder="Großeltern">
+              </div>
+              <div class="peopInputContainer">
+              <input type="text" class="peopSelector" id="Verwandte" placeholder="Verwandte">
+              </div>
+
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Mitbewohner*in" placeholder="Mitbewohner*in">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Vater" placeholder="Vater">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Freund*in" placeholder="Freund*in">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Mitschüler*in" placeholder="Mitschüler*in">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Nachbar*in" placeholder="Nachbar*in">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Geschwister" placeholder="Geschwister">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Haustier" placeholder="Haustier">
+              </div>
+              <div class="peopInputContainer">
+                  <input type="text" class="peopSelector" id="Kommiliton*in" placeholder="Kommiliton*in">
+              </div>
+
+          </form>
+      </div>
+        <div class="submitContainer">
+            <p class="info" >Bitte hier klicken, wenn sie mit ihrer Auswahl zufrieden sind</p>
+            <button type="button" class="SubmitButton" id="devSubmit">Submit</button>
+        </div>
+
+    </div>
+
+<!--  <script src="index.js" type="module"></script>-->
+  <script src="devSelector.js" type="module"></script>
+
+
+</body>
+</html>

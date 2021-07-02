@@ -1,0 +1,28 @@
+body{
+    background: #dfdfdf
+}
+
+.videoConainer{
+    display: flex;
+    /*position: center ;*/
+    justify-content: center;
+    flex-direction: column;
+}
+.SubmitButton{
+    height: 35px;
+    padding: 0 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: cornflowerblue;
+    outline: 0;
+    transition: .2s;
+    margin: 10px;
+}
+
+#nochmal{
+    background-color: #dddddd;
+    color: #424242;
+}
