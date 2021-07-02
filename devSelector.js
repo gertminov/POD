@@ -1,12 +1,34 @@
-import {testArray} from "./index";
+const devices = document.getElementsByClassName('devSelector')
+const button = document.querySelector('#devSubmit')
+const people = document.getElementsByClassName('peopSelector')
 
-document.querySelector('#devSubmit').addEventListener('click', function (){
-    document.getElementById('output').innerHTML = document.getElementById('Computer').checked
-    // testArray[0] = document.getElementById('Computer').checked
-    // if (testArray[0]){
-    //     document.getElementById('output').innerHTML = "Ballern alder"
-    // }
+
+
+
+button.addEventListener('click', data =>{
+
+    for(let item of devices){
+        if (item.checked){
+            saveToLocal(item.id, item.checked)
+        }
+    }
+
+    for (let person of people) {
+        if (person.value !== ""){
+            console.log(person.id + ": " +  person.value)
+            saveToLocal(person.id, person.value)
+        }
+
+    }
+
+    location.href='index.html'
 
 
 })
+
+
+
+function saveToLocal(key, value) {
+    localStorage.setItem(key, value)
+}
 

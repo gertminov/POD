@@ -17,23 +17,26 @@
         <input type="checkbox" class="devSelector" id="Radio"> <label for="Radio">Radio</label> <br>
         <input type="checkbox" class="devSelector" id="Laptop"> <label for="Laptop">Laptop</label> <br>
         <input type="checkbox" class="devSelector" id="Handy"> <label for="Handy">Handy</label> <br>
-        <button type="button" id="devSubmit">Submit</button>
 
     </form>
-
-
   </div>
-  <a href="index.html"> hier</a>
-  <p id="output">test</p>
 
+  <div class="peopleSelection" id="peopSelectiono">
+      <form>
+          <input type="text" class="peopSelector" id="Mutter" placeholder="Mutter"> <br>
+          <input type="text" class="peopSelector" id="Vater" placeholder="Vater"> <br>
+          <input type="text" class="peopSelector" id="Freund*in" placeholder="Freund*in"> <br>
+          <input type="text" class="peopSelector" id="Mitschüler" placeholder="Mitschüler"> <br>
+          <input type="text" class="peopSelector" id="Partner*in" placeholder="Partner*in"> <br>
+          <input type="text" class="peopSelector" id="Nachbar*in" placeholder="Nachbar*in"> <br>
+          <input type="text" class="peopSelector" id="Geschwister" placeholder="Geschwister"> <br>
+          <button type="button" id="devSubmit">Submit</button>
+      </form>
+  </div>
+
+<!--  <script src="index.js" type="module"></script>-->
   <script src="devSelector.js" type="module"></script>
-  <script src="index.js" type="module"></script>
-    <script>
-        // import {testArray} from "./index";
-        function halloSagen(){
-            document.getElementById('output').innerHTML = document.getElementById('Computer').checked
-        }
-    </script>
+
 
 </body>
 </html>

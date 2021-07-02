@@ -12,6 +12,13 @@
     justify-content: center;
 }
 
+.peopleSelection{
+    position: center;
+    display: flex;
+    justify-content: center;
+    margin: 3em 3em 3em 3em ;
+}
+
 .button{
     font-size: 40px;
     padding: 20px 20px 20px 40px;

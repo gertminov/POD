@@ -133,30 +133,68 @@ class Item{
     }
 }
 
-var item1 = new Item('Laptop', 'Laptop')
-var item2 = new Item('Handy', 'Handy')
-var item3 = new Item('Mutter', 'Ilse')
-var item4 = new Item('Vater', 'Gert')
-var item5 = new Item('Freund', 'Herbert')
-var item6 = new Item('TV', 'TV')
 
 
 var idex = 0
-export const itemArray = [item1, item2, item3, item4, item5, item6]
-export var testArray = [false, false, false, false]
+const itemArray = []
+
+const devicelist = ['Computer', 'TV', "SmartSpeaker", "Konsole", "Smartwatch", "Tablet", "Radio", "Laptop" , "Handy"]
+const peopleList = ['Mutter', 'Vater', 'Freund*in', 'Mitschüler', 'Partner*in', 'Nachbar*in', 'Geschwister']
 
 
-document.querySelector('#newItem').addEventListener('click', function (){
-    let newDiv = document.createElement("div")
-    newDiv.setAttribute('class', 'draggable item')
-    newDiv.setAttribute('id', itemArray[idex].item)
-    let newP = document.createElement('p')
-    newP.innerHTML = itemArray[idex].name
+function getDevices(){
+    for (let device of devicelist) {
+        const itemSel = localStorage.getItem(device)
+        if( itemSel === 'true'){
+            let itemObj = new Item(device, device)
+            itemArray.push(itemObj)
+            console.log('HAllo')
+        }
+    }
+}
 
-    idex++
-    newDiv.appendChild(newP)
-    let itemContainer = document.getElementById('items')
-    itemContainer.appendChild(newDiv)
-})
+function getPeople() {
+    for (let person of peopleList) {
+        const personSel = localStorage.getItem(person)
+        console.log(personSel)
+        if (personSel){
+            let itemObj = new Item(person, personSel)
+            itemArray.push(itemObj)
+            console.log(personSel + " pushed")
+        }
+    }
+}
+
+
+// document.querySelector('#newItem').addEventListener('click', itemAdder)
+
+function itemAdder (){
+    if (idex <idexBound){
+        let newDiv = document.createElement("div")
+        newDiv.setAttribute('class', 'draggable item')
+        newDiv.setAttribute('id', itemArray[idex].item)
+        let newP = document.createElement('p')
+        newP.innerHTML = itemArray[idex].name
+
+        idex++
+        newDiv.appendChild(newP)
+        let itemContainer = document.getElementById('items')
+        itemContainer.appendChild(newDiv)
+
+    }else {
+        console.log("zu Ende")
+    }
+
+}
+
+getDevices()
+getPeople()
+const idexBound = itemArray.length
+for (let i = 0; i < itemArray.length; i++) {
+    itemAdder()
+}
+localStorage.clear()
+
+
 
 
