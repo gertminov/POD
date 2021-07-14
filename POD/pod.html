@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>POD2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" id="popup-close-btn">&times;</div>
+            <h1>Info</h1>
+            <p>
+                Sie sehen nun alle von Ihnen ausgewählten Personen und Geräte als bunte Kreise dargestellt.
+                <br>
+                Indem Sie diese Kreise im Halbkreis platzieren, können Sie zeigen, wie nahe Sie sich der Person oder dem Gerät fühlen und wie häufig Sie mit dieser/diesem interagieren.
+                <br>
+                Die Figur unten in der Mitte stellt Sie selbst dar. Um die Nähe zu beschreiben, platzieren Sie alle Personen und Geräte auf den eingezeichneten Halbkreislinien.
+                <br>
+                Je größer der Abstand zwischen Ihrer eigenen Figur und den jeweils anderen Personen/Geräten ist, desto niedriger ist Ihre emotionale Nähe zu diesen.
+                <br>
+                Der Farbverlauf stellt die Interaktionshäufigkeit mit diesem Gerät / dieser Person dar. Je dunkler der Bereich ist, in den Sie Ihr Gerät/ Ihre Person ziehen, umso häufiger interagieren Sie mit diesem/dieser.<br>
+                <br>
+
+                Bitte platzieren Sie nun alle von Ihnen ausgewählten Geräte und Personen entlang der beiden beschriebenen Dimensionen (Nähe & Interaktionshäufigkeit). Sie können die Reihenfolge Ihrer Platzierungen dabei frei auswählen. Sie haben außerdem die Möglichkeit, von Ihnen bereits gesetzte Kreise jederzeit erneut zu verschieben.
+                <br><br>
+                Wenn Sie alle Geräte und Personen platziert haben und mit der Gesamtaufstellung zufrieden sind, schreiben Sie sich bitte die Person / das Gerät auf, mit der/dem Sie am wenigsten und am häufigsten interagiert haben.
+                <br> <br>
+                Drücken Sie danach bitte auf den Button "Absenden" und kehren Sie anschließend zum ursprünglichen Fragebogen zurück.
+            </p>
+        </div>
+    </div>
+    <div class="popup" id="popUp-absenden">
+        <div class="overlay">
+            <div class="content">
+                <div class="close-btn" id="popup-close-btn2">&times;</div>
+                <h1>Info</h1>
+                <p>
+
+                    Vielen Dank für Ihre Antworten. <br>
+                    Schließen Sie nun dieses Fenster und kehren Sie anschließend zum ursprünglichen Fragebogen zurück. Klicken Sie dort bitte auf “weiter”.
+                    <br> <br>
+
+                    Falls Sie sich Ihr Gerät / Ihre Person mit der niedrigsten und höchsten Interaktionshäufigkeit noch nicht notiert haben, tun Sie das bitte jetzt.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sidenav">
+<!--        <p id="weg">Position</p>-->
+<!--        <p id="distance">Distanz</p>-->
+<!--        <p id="winkel">winkel</p>-->
+        <div class="buttonContainer">
+            <button id="dataRec" class="button" >Absenden</button>
+            <button id="infoBtn" class="button" >INFO</button>
+        </div>
+
+    </div>
+    <div id="circles">
+        <img src="../assets/gradient.png" id="gradient" >
+        <div id="centerDiv">
+            <div class="middle" id="middle"></div>
+            <img id="personIcon" src="../assets/person.svg" alt="Person">
+        </div>
+        <div id="circle1" class="halfCircle"></div>
+        <div id="circle2" class="halfCircle"></div>
+        <div id="circle3" class="halfCircle"></div>
+        <div id="circle4" class="halfCircle"></div>
+        <div id="circle5" class="halfCircle"></div>
+
+
+    </div>
+    <div id="items">
+        <div id="item1" class="draggable item">
+            <p class="itemText">Handy</p>
+        </div>
+<!--        <div id="item2" class="draggable item">-->
+<!--            <p>Laptop</p>-->
+<!--        </div>-->
+<!--        <div id="item3" class="draggable item">-->
+<!--            <p>Mutter</p>-->
+<!--        </div>-->
+<!--        <div id="item4" class="draggable item">-->
+<!--            <p>Vater</p>-->
+<!--        </div>-->
+    </div>
+
+    <script src="index.js" type="module">
+    </script>
+    <script src="https://s.pageclip.co/v1/pageclip.js"></script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ body{
     /*position: center ;*/
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 .SubmitButton{
     height: 35px;
@@ -23,6 +24,15 @@ body{
 }
 
 #nochmal{
-    background-color: #dddddd;
+    background-color: #999999;
+    color: #ffffff;
+}
+
+.infottext{
+    width: 80%;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.25em;
     color: #424242;
+    margin-top: 10px;
 }

@@ -5,8 +5,74 @@
     --circleRadius: 200px;
 }
 
+body{
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 4;
+    display: none;
+
+}
+
+.popup .content {
+    width: 40%;
+    padding: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.25em;
+    color: #424242;
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+
+    z-index: 5;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 30px;
+    height: 30px;
+    background: #424242;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+
+
+}
+
 .button{
-    font-size: 40px;
+    cursor: pointer;
+    font-size: 2vw;
     padding: 20px 20px 20px 40px;
     margin: 10px;
     border: 2px solid cornflowerblue;
@@ -18,6 +84,12 @@
     outline: 0;
     transition: .2s;
 }
+
+.button:active{
+    background-color: #89ABE7FF;
+    border-color: #89ABE7FF;
+}
+
 .buttonContainer{
     display: flex;
     flex-direction: column;
@@ -26,18 +98,35 @@
 }
 
 
-.sidenav{
+/*.sidenav{ !* OLD*!*/
+/*    height: 100%;*/
+/*    width: 16%;*/
+/*    position: fixed;*/
+/*    z-index: 1;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background-color: #999999;*/
+/*    overflow-x: hidden;*/
+
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+.sidenav {
+    position: fixed;
     height: 100%;
     width: 16%;
-    position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
-    background-color: #424242;
-    overflow-x: hidden;
 
     display: flex;
     justify-content: center;
+    z-index: 1;
+    background-color: #424242;
+    box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem;
+
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
 }
 
 
@@ -117,11 +206,12 @@ p{
 }
 
 #circles{
-    height: 100%;
-    width: 116%;
+    /*background-color: red;*/
+    height: 50vw;
+    width: 100vw;
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    left: 8%;
     display: flex;
     justify-content: center;
 }
@@ -129,8 +219,8 @@ p{
 #gradient{
     position: fixed;
     bottom: 0;
-    width: calc(var(--circleWidth)*6.6);
-    height: calc(var(--circleheight)*6.6);
+    width: calc(var(--circleWidth)*5.09);
+    height: calc(var(--circleheight)*6.7);
 }
 
 .halfCircle{
